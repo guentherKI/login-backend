@@ -12,6 +12,10 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // In-memory user store (for demonstration purposes)
 const users = [];
 const messages = [];
